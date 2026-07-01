@@ -23,6 +23,7 @@ export default function App() {
   const [crops] = useState(cropData);
   const [selectedCrop, setSelectedCrop] = useState(cropData && cropData.length > 0 ? cropData[0] : null);
   const [selectedSector, setSelectedSector] = useState('pangan');
+  const [isSearchedCity, setIsSearchedCity] = useState(false);
 
   const getSectorFromCategory = (kategori) => {
     if (!kategori) return 'pangan';
@@ -59,7 +60,6 @@ export default function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-
   useEffect(() => {
     if (selectedCrop) {
       setSelectedSector(getSectorFromCategory(selectedCrop.kategori));
@@ -84,69 +84,96 @@ export default function App() {
     }
   }, [selectedCrop, localWeather.hasFetched]);
 
-  const fetchWeather = async () => {
-    setLocalWeather(prev => ({ ...prev, loading: true }));
+  const processWeatherData = (data, overrideCityName = null) => {
+    const wTemp = Math.round(data.main.temp);
+    const wType = data.weather[0].main;
+    const wDesc = data.weather[0].description;
+    const wCity = overrideCityName || data.name;
 
-    const processWeatherData = (data) => {
-      const wTemp = Math.round(data.main.temp);
-      const wType = data.weather[0].main;
-      const wDesc = data.weather[0].description;
-      const wCity = data.name;
+    let wRain = 120;
+    if (['Rain', 'Drizzle', 'Thunderstorm'].includes(wType)) {
+      wRain = 250;
+    } else if (['Clear'].includes(wType)) {
+      wRain = 50;
+    } else if (['Clouds', 'Mist', 'Haze', 'Fog'].includes(wType)) {
+      wRain = 130;
+    }
 
-      let wRain = 120;
-      if (['Rain', 'Drizzle', 'Thunderstorm'].includes(wType)) {
-        wRain = 250;
-      } else if (['Clear'].includes(wType)) {
-        wRain = 50;
-      } else if (['Clouds', 'Mist', 'Haze', 'Fog'].includes(wType)) {
-        wRain = 130;
+    setLocalWeather({
+      city: wCity,
+      temp: wTemp,
+      weatherType: wType,
+      description: wDesc,
+      loading: false,
+      error: null,
+      hasFetched: true
+    });
+
+    setTemp(wTemp);
+    setRain(wRain);
+    setIsManual(false);
+  };
+
+  const fetchWeatherByCoords = async (latitude, longitude, isFallback = false) => {
+    try {
+      const [weatherRes, geoRes] = await Promise.all([
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=id`
+        ),
+        fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&accept-language=id`
+        )
+      ]);
+
+      if (!weatherRes.ok) throw new Error('API OpenWeather Gagal');
+      const weatherData = await weatherRes.ok ? await weatherRes.json() : null;
+
+      let customCityName = weatherData ? weatherData.name : 'Unknown';
+      if (geoRes.ok) {
+        const geoData = await geoRes.json();
+        if (geoData && geoData.address) {
+          const addr = geoData.address;
+          const subDistrict = addr.village || addr.suburb || addr.town || addr.city_district || addr.neighbourhood;
+          const district = addr.city || addr.municipality || addr.county || addr.state;
+          if (subDistrict && district) {
+            customCityName = `${subDistrict}, ${district}`;
+          } else if (district) {
+            customCityName = district;
+          } else if (geoData.name) {
+            customCityName = geoData.name;
+          }
+        }
       }
 
+      if (weatherData) {
+        processWeatherData(weatherData, customCityName);
+      }
+
+      if (isFallback) {
+        setLocalWeather(prev => ({
+          ...prev,
+          city: `${customCityName} (Default)`,
+          error: 'Akses lokasi ditolak'
+        }));
+      }
+    } catch (err) {
       setLocalWeather({
-        city: wCity,
-        temp: wTemp,
-        weatherType: wType,
-        description: wDesc,
+        city: 'Jakarta (Default)',
+        temp: 28,
+        weatherType: 'Clouds',
+        description: 'berawan tebal',
         loading: false,
-        error: null,
+        error: err.message,
         hasFetched: true
       });
-
-      setTemp(wTemp);
-      setRain(wRain);
+      setTemp(28);
+      setRain(120);
       setIsManual(false);
-    };
+    }
+  };
 
-    const fetchWeatherByCoords = async (latitude, longitude, isFallback = false) => {
-      try {
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=id`
-        );
-        if (!response.ok) throw new Error('API Request Failed');
-        const data = await response.json();
-        processWeatherData(data);
-        if (isFallback) {
-          setLocalWeather(prev => ({
-            ...prev,
-            city: `${data.name} (Default)`,
-            error: 'Akses lokasi ditolak'
-          }));
-        }
-      } catch (err) {
-        setLocalWeather({
-          city: 'Jakarta (Default)',
-          temp: 28,
-          weatherType: 'Clouds',
-          description: 'berawan tebal',
-          loading: false,
-          error: err.message,
-          hasFetched: true
-        });
-        setTemp(28);
-        setRain(120);
-        setIsManual(false);
-      }
-    };
+  const fetchWeather = async () => {
+    setLocalWeather(prev => ({ ...prev, loading: true }));
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -161,6 +188,32 @@ export default function App() {
       );
     } else {
       fetchWeatherByCoords(-6.2088, 106.8456, true);
+    }
+  };
+
+  const fetchWeatherByCityName = async (cityName) => {
+    setLocalWeather(prev => ({ ...prev, loading: true }));
+    try {
+      const geoResponse = await fetch(
+        `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(cityName)},ID&limit=1&appid=${apiKey}`
+      );
+      if (!geoResponse.ok) throw new Error('Gagal menghubungi layanan lokasi');
+      const geoData = await geoResponse.json();
+
+      if (!geoData || geoData.length === 0) {
+        throw new Error('Kota tidak ditemukan di Indonesia');
+      }
+
+      const { lat, lon } = geoData[0];
+
+      await fetchWeatherByCoords(lat, lon);
+      setIsSearchedCity(true);
+    } catch (err) {
+      setLocalWeather(prev => ({
+        ...prev,
+        loading: false,
+        error: err.message
+      }));
     }
   };
 
@@ -192,6 +245,11 @@ export default function App() {
       setRain(selectedCrop.parameter_air);
       setTemp(28);
       setIsManual(false);
+      return;
+    }
+    if (isSearchedCity) {
+      fetchWeather();
+      setIsSearchedCity(false);
       return;
     }
     if (localWeather.hasFetched) {
@@ -512,8 +570,9 @@ export default function App() {
         <Header
           localWeather={localWeather}
           onResetWeather={handleResetWeather}
-          isManual={isManual}
+          isManual={isManual || isSearchedCity}
           activeSection={activeSection}
+          onSearchCity={fetchWeatherByCityName}
         />
 
         {renderContent()}
