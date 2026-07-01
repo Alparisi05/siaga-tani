@@ -48,8 +48,6 @@ export default function App() {
   const [isManual, setIsManual] = useState(false);
 
   const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
-  const fallbackCity = 'Jakarta';
-  const useLiveLocation = true;
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -119,17 +117,24 @@ export default function App() {
       setIsManual(false);
     };
 
-    const fetchFallbackWeather = async () => {
+    const fetchWeatherByCoords = async (latitude, longitude, isFallback = false) => {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${fallbackCity}&appid=${apiKey}&units=metric&lang=id`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=id`
         );
         if (!response.ok) throw new Error('API Request Failed');
         const data = await response.json();
         processWeatherData(data);
+        if (isFallback) {
+          setLocalWeather(prev => ({
+            ...prev,
+            city: `${data.name} (Default)`,
+            error: 'Akses lokasi ditolak'
+          }));
+        }
       } catch (err) {
         setLocalWeather({
-          city: `${fallbackCity} (Default)`,
+          city: 'Jakarta (Default)',
           temp: 28,
           weatherType: 'Clouds',
           description: 'berawan tebal',
@@ -143,34 +148,25 @@ export default function App() {
       }
     };
 
-    if (useLiveLocation && navigator.geolocation) {
+    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          try {
-            const { latitude, longitude } = position.coords;
-            const response = await fetch(
-              `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=id`
-            );
-            if (!response.ok) throw new Error('API Request Failed');
-            const data = await response.json();
-            processWeatherData(data);
-          } catch (err) {
-            fetchFallbackWeather();
-          }
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          fetchWeatherByCoords(latitude, longitude);
         },
         (error) => {
-          fetchFallbackWeather();
+          fetchWeatherByCoords(-6.2088, 106.8456, true);
         },
         { timeout: 8000 }
       );
     } else {
-      fetchFallbackWeather();
+      fetchWeatherByCoords(-6.2088, 106.8456, true);
     }
   };
 
   useEffect(() => {
     fetchWeather();
-  }, [useLiveLocation, fallbackCity]);
+  }, []);
 
   useEffect(() => {
     if (localWeather.hasFetched) {
