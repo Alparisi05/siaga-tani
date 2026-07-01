@@ -1,0 +1,554 @@
+[
+  {
+    "nama": "Padi",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 200,
+    "solusi_kekeringan": "Gunakan varietas toleran kekeringan seperti Inpari 38, terapkan sistem irigasi berselang (intermittent irrigation), dan lakukan penanaman mulsa jerami di sekitar batang.",
+    "solusi_hama_cuaca_panas": "Waspadai serangan wereng cokelat dan walang sangit yang meningkat di musim kering; gunakan insektisida berbahan imidakloprid dan pastikan tanaman tidak kekurangan air."
+  },
+  {
+    "nama": "Jagung",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Gunakan varietas hibrida toleran kekeringan seperti BISI-18 atau Pioneer, terapkan irigasi tetes, dan lakukan pemulsaan dengan jerami atau plastik hitam perak.",
+    "solusi_hama_cuaca_panas": "Waspadai ulat grayak (Spodoptera frugiperda); semprotkan insektisida klorpirifos atau gunakan agen hayati Beauveria bassiana pada pagi hari saat suhu belum terlalu tinggi."
+  },
+  {
+    "nama": "Kedelai",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Pilih varietas toleran kekeringan seperti Anjasmoro atau Grobogan, tanam pada kedalaman optimal 3-5 cm, dan aplikasikan irigasi pada fase kritis (berbunga dan pengisian polong).",
+    "solusi_hama_cuaca_panas": "Pantau hama penggerek polong (Etiella zinckenella) dan kutu daun; semprotkan pestisida nabati berbasis neem oil pada sore hari."
+  },
+  {
+    "nama": "Kacang Tanah",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 36,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Aplikasikan irigasi furrow atau tetes pada fase pembentukan ginofor, gunakan mulsa jerami, dan pilih varietas genjah seperti Kelinci atau Tuban.",
+    "solusi_hama_cuaca_panas": "Waspadai thrips dan tungau merah yang berkembang pesat saat panas; semprotkan akarisida berbasis abamektin dan jaga kelembapan kanopi tanaman."
+  },
+  {
+    "nama": "Kacang Hijau",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 70,
+    "solusi_kekeringan": "Kacang hijau relatif toleran kekeringan; cukupi kebutuhan air pada fase berbunga dengan irigasi satu kali setiap 5-7 hari dan gunakan mulsa organik.",
+    "solusi_hama_cuaca_panas": "Waspada terhadap hama kutu daun dan lalat kacang; gunakan perangkap kuning (yellow sticky trap) dan semprotkan insektisida sistemik bila populasi tinggi."
+  },
+  {
+    "nama": "Ubi Kayu (Singkong)",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 42,
+    "curah_hujan_minimal": 60,
+    "solusi_kekeringan": "Singkong sangat toleran kekeringan; optimalkan dengan penanaman stek horizontal atau miring, aplikasikan pupuk organik, dan buat rorak untuk menampung air hujan.",
+    "solusi_hama_cuaca_panas": "Waspadai tungau merah (Tetranychus urticae) dan kutu putih (Phenacoccus manihoti); semprot dengan akarisida dan jaga kelembapan kanopi."
+  },
+  {
+    "nama": "Ubi Jalar",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Lakukan penyiraman minimal 2 kali seminggu pada fase awal pertumbuhan, gunakan mulsa, dan pilih varietas tahan kering seperti Cilembu atau Beta-1.",
+    "solusi_hama_cuaca_panas": "Pantau hama boleng (Cylas formicarius) yang meningkat di musim kering; gunakan feromon seks sebagai perangkap dan lakukan rotasi tanaman."
+  },
+  {
+    "nama": "Sorgum",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 42,
+    "curah_hujan_minimal": 50,
+    "solusi_kekeringan": "Sorgum sangat toleran kering; pastikan pengolahan tanah dalam untuk menyimpan air, gunakan varietas lokal unggul, dan aplikasikan ZPT (zat pengatur tumbuh) jika diperlukan.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat bibit dan kutu daun; lakukan perlakuan benih dengan insektisida sebelum tanam dan pantau secara rutin."
+  },
+  {
+    "nama": "Gandum (Dataran Tinggi)",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 28,
+    "curah_hujan_minimal": 120,
+    "solusi_kekeringan": "Terapkan irigasi sprinkler pada fase anakan dan pengisian biji, gunakan varietas adaptif dataran tinggi tropis, serta aplikasikan pupuk berimbang untuk meningkatkan efisiensi air.",
+    "solusi_hama_cuaca_panas": "Pantau penyakit karat daun yang muncul saat lembap; semprot fungisida triazol dan hindari tanam terlalu rapat."
+  },
+  {
+    "nama": "Talas",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Siram secara rutin setiap 2 hari sekali, pasang mulsa organik tebal di sekitar tanaman, dan tanam di lahan yang memiliki kadar bahan organik tinggi.",
+    "solusi_hama_cuaca_panas": "Waspadai thrips dan aphids yang menyerang daun muda; semprotkan insektisida nabati dari bawang putih atau daun mimba."
+  },
+  {
+    "nama": "Kentang",
+    "kategori": "Tanaman Pangan",
+    "suhu_maksimal": 25,
+    "curah_hujan_minimal": 120,
+    "solusi_kekeringan": "Terapkan irigasi tetes dengan jadwal ketat (setiap 3-4 hari), pasang mulsa plastik hitam perak, dan pilih varietas dataran tinggi seperti Granola atau Atlantic.",
+    "solusi_hama_cuaca_panas": "Waspadai penyakit busuk daun (Phytophthora infestans) dan kutu daun vektor virus; semprotkan fungisida mankozeb dan insektisida imidakloprid secara bergantian."
+  },
+  {
+    "nama": "Tomat",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 32,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Gunakan sistem irigasi tetes dan pasang mulsa plastik hitam perak untuk menjaga kelembapan tanah; siram pada pagi hari untuk mengurangi penguapan.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu kebul (Bemisia tabaci) dan tungau; gunakan insektisida nabati dari daun mimba dan pasang perangkap kuning."
+  },
+  {
+    "nama": "Cabai Merah",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Pasang mulsa plastik hitam perak, gunakan irigasi tetes, dan lakukan penyiraman 2 kali sehari pada musim kemarau panjang.",
+    "solusi_hama_cuaca_panas": "Waspadai thrips, kutu daun, dan tungau merah yang melonjak saat panas; rotasi pestisida antara abamektin dan spinosad untuk mencegah resistensi."
+  },
+  {
+    "nama": "Cabai Rawit",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 37,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Siram dua kali sehari dengan air secukupnya, gunakan mulsa organik dari jerami, dan tambahkan pupuk organik cair untuk menjaga vitalitas tanaman.",
+    "solusi_hama_cuaca_panas": "Pantau serangan antraknosa (patek) dan thrips; semprot fungisida berbahan propineb dan insektisida nabati secara bergantian."
+  },
+  {
+    "nama": "Bawang Merah",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 30,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Lakukan penyiraman rutin dua kali sehari (pagi dan sore) dengan sistem sprinkler, dan pastikan drainase baik agar tidak tergenang.",
+    "solusi_hama_cuaca_panas": "Waspadai ulat bawang (Spodoptera exigua) dan thrips; gunakan feromon perangkap dan semprotkan insektisida klorpirifos bila populasi melebihi ambang ekonomi."
+  },
+  {
+    "nama": "Bawang Putih",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 28,
+    "curah_hujan_minimal": 120,
+    "solusi_kekeringan": "Terapkan irigasi sprinkler pagi hari, pasang mulsa jerami, dan pilih lokasi tanam di dataran tinggi yang memiliki kelembapan alami lebih stabil.",
+    "solusi_hama_cuaca_panas": "Pantau penyakit layu Fusarium dan thrips; lakukan perlakuan benih dengan fungisida sebelum tanam dan semprot insektisida secara berkala."
+  },
+  {
+    "nama": "Bawang Daun (Daun Bawang)",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 32,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap hari pada pagi hari, gunakan mulsa organik, dan tanam di tanah yang kaya bahan organik untuk menjaga kelembapan akar.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat penggorok daun dan thrips; semprotkan insektisida sistemik dan lakukan sanitasi lahan secara rutin."
+  },
+  {
+    "nama": "Kangkung",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 70,
+    "solusi_kekeringan": "Kangkung darat: siram dua kali sehari; kangkung air: pastikan ketersediaan air irigasi; gunakan sistem bedengan dengan parit irigasi di sekelilingnya.",
+    "solusi_hama_cuaca_panas": "Pantau ulat daun dan kutu daun yang aktif saat panas; semprot dengan insektisida nabati atau Bacillus thuringiensis (Bt) untuk ulat."
+  },
+  {
+    "nama": "Bayam",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Siram setiap hari pada pagi hari dengan air cukup, gunakan mulsa organik tipis, dan pilih lokasi yang teduh sebagian untuk mengurangi penguapan.",
+    "solusi_hama_cuaca_panas": "Waspadai ulat Spodoptera dan tungau; semprotkan insektisida nabati berbasis neem oil dan hindari penanaman terlalu rapat agar sirkulasi udara baik."
+  },
+  {
+    "nama": "Sawi Hijau",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 32,
+    "curah_hujan_minimal": 90,
+    "solusi_kekeringan": "Siram minimal dua kali sehari, pasang paranet 50% untuk mengurangi evapotranspirasi, dan gunakan mulsa organik dari sisa tanaman.",
+    "solusi_hama_cuaca_panas": "Pantau ulat daun kubis (Plutella xylostella); gunakan perangkap feromon dan semprotkan Bt atau insektisida berbahan spinosad."
+  },
+  {
+    "nama": "Sawi Putih (Petsai)",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 30,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Lakukan penyiraman rutin pagi dan sore, gunakan bedengan dengan mulsa plastik, dan tanam di musim yang tidak terlalu kering.",
+    "solusi_hama_cuaca_panas": "Waspadai ulat Plutella dan kutu daun; semprot insektisida berbasis klorfenapir atau spinosad secara bergantian."
+  },
+  {
+    "nama": "Kubis",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 28,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Terapkan irigasi sprinkler dua kali seminggu, pasang mulsa plastik, dan pilih varietas hibrida toleran panas seperti KK Cross.",
+    "solusi_hama_cuaca_panas": "Pantau ulat kubis (Crocidolomia pavonana) dan Plutella; gunakan jaring anti-serangga (insect net) sebagai barrier fisik dan semprotkan Bt secara rutin."
+  },
+  {
+    "nama": "Brokoli",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 25,
+    "curah_hujan_minimal": 120,
+    "solusi_kekeringan": "Tanam di dataran tinggi dengan kelembapan alami; siram setiap 2-3 hari dan gunakan mulsa plastik untuk menjaga suhu tanah tetap rendah.",
+    "solusi_hama_cuaca_panas": "Waspadai ulat daun dan hama trips; pasang perangkap kuning dan semprotkan insektisida selektif saat populasi hama meningkat."
+  },
+  {
+    "nama": "Kembang Kol (Bunga Kol)",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 25,
+    "curah_hujan_minimal": 120,
+    "solusi_kekeringan": "Siram secara konsisten setiap 2-3 hari, gunakan mulsa tebal, dan tanam saat awal musim hujan untuk memanfaatkan curah hujan alami.",
+    "solusi_hama_cuaca_panas": "Pantau ulat Plutella dan kutu daun; lakukan penyemprotan insektisida rotasi untuk mencegah resistensi."
+  },
+  {
+    "nama": "Terong",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Gunakan irigasi tetes atau siram setiap 3 hari sekali, pasang mulsa plastik hitam, dan beri naungan sementara saat terik matahari ekstrem.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu daun, tungau, dan penggerek buah; semprot insektisida berbahan abamektin dan lakukan pemangkasan buah terserang."
+  },
+  {
+    "nama": "Mentimun",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap hari pada pagi hari, pasang mulsa dan ajir untuk menopang tanaman, serta gunakan irigasi tetes di bawah mulsa untuk efisiensi air.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu daun, thrips, dan penyakit layu; semprot insektisida dan fungisida secara bergantian serta buang bagian tanaman yang terinfeksi."
+  },
+  {
+    "nama": "Labu Siam",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram dua kali seminggu secara dalam, buat parit irigasi di sekeliling tanaman, dan gunakan mulsa organik tebal.",
+    "solusi_hama_cuaca_panas": "Pantau lalat buah dan kutu daun; gunakan perangkap metil eugenol untuk lalat buah dan semprotkan insektisida nabati untuk kutu daun."
+  },
+  {
+    "nama": "Labu Kuning",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Siram setiap 3-4 hari dengan air cukup banyak untuk menjangkau akar dalam; gunakan mulsa dan buat embung kecil di sekitar tanaman.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu daun dan tungau merah; semprotkan akarisida dan insektisida nabati berbasis neem oil."
+  },
+  {
+    "nama": "Kacang Panjang",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Siram setiap 2 hari sekali, pasang ajir dan mulsa, serta hindari tanam di lahan yang drainasenya buruk karena rentan layu saat kering.",
+    "solusi_hama_cuaca_panas": "Pantau hama penggerek polong dan kutu daun; semprot insektisida berbahan sipermetrin dan gunakan perangkap kuning."
+  },
+  {
+    "nama": "Buncis",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 30,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 2 hari sekali pada pagi hari, gunakan mulsa organik, dan pilih varietas toleran panas seperti Lebat-2.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu daun, thrips, dan tungau; rotasikan insektisida abamektin dan spinosad untuk mencegah resistensi hama."
+  },
+  {
+    "nama": "Wortel",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 28,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 3 hari, pastikan tanah gembur dan dalam untuk pertumbuhan umbi, serta tanam di lahan dataran tinggi yang lebih sejuk.",
+    "solusi_hama_cuaca_panas": "Pantau ulat tanah dan lalat wortel; lakukan perlakuan tanah dengan insektisida granul sebelum tanam dan rotasi tanaman secara berkala."
+  },
+  {
+    "nama": "Buncis Prancis (French Bean)",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 28,
+    "curah_hujan_minimal": 110,
+    "solusi_kekeringan": "Terapkan irigasi furrow atau tetes, tanam di dataran tinggi dengan kelembapan alami, dan gunakan mulsa organik tebal.",
+    "solusi_hama_cuaca_panas": "Waspadai tungau merah dan kutu daun; semprotkan akarisida berbahan abamektin dan jaga agar tanaman tidak mengalami stres air."
+  },
+  {
+    "nama": "Seledri",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 28,
+    "curah_hujan_minimal": 120,
+    "solusi_kekeringan": "Seledri sangat butuh air; siram setiap hari pagi dan sore, tanam di lahan yang bisa menahan air, dan beri mulsa organik tebal.",
+    "solusi_hama_cuaca_panas": "Pantau ulat daun dan aphids; semprotkan insektisida nabati dari ekstrak bawang putih dan lakukan penyiraman daun (foliar spray) saat suhu sangat tinggi."
+  },
+  {
+    "nama": "Selada",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 30,
+    "curah_hujan_minimal": 90,
+    "solusi_kekeringan": "Siram setiap hari pada pagi hari, gunakan paranet 50% untuk mengurangi suhu, dan pertimbangkan sistem hidroponik NFT yang lebih efisien air.",
+    "solusi_hama_cuaca_panas": "Waspadai ulat tanah dan thrips; gunakan insect net sebagai barrier fisik dan semprotkan insektisida bila populasi hama meningkat."
+  },
+  {
+    "nama": "Pare (Paria)",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 37,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Siram setiap 2 hari sekali, buat para-para (trellis) agar tanaman mendapat sirkulasi udara baik, dan aplikasikan mulsa di bawah tanaman.",
+    "solusi_hama_cuaca_panas": "Pantau lalat buah dan kutu daun; pasang perangkap metil eugenol dan semprotkan insektisida nabati secara rutin."
+  },
+  {
+    "nama": "Oyong (Gambas)",
+    "kategori": "Hortikultura - Sayuran",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Siram setiap 2-3 hari dengan cukup air, buat para-para untuk merambat, dan pasang mulsa organik untuk menjaga kelembapan tanah.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu daun dan lalat buah; gunakan perangkap feromon dan semprot insektisida nabati berbasis neem oil."
+  },
+  {
+    "nama": "Pisang",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 5-7 hari dengan jumlah air yang cukup banyak (20-30 liter/pohon), buat lubang biopori di sekitar tanaman, dan gunakan mulsa organik tebal.",
+    "solusi_hama_cuaca_panas": "Waspadai penyakit layu Fusarium dan kumbang pisang (Cosmopolites sordidus); gunakan biofungisida Trichoderma dan perangkap batang pisang fermentasi."
+  },
+  {
+    "nama": "Mangga",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 42,
+    "curah_hujan_minimal": 50,
+    "solusi_kekeringan": "Mangga toleran kering; siram setiap 10-14 hari pada musim kemarau panjang, buat rorak di bawah kanopi, dan mulsa tebal di bawah pohon.",
+    "solusi_hama_cuaca_panas": "Pantau lalat buah (Bactrocera sp.), wereng mangga, dan penggerek batang; pasang perangkap protein bait dan semprot insektisida pada fase pembungaan."
+  },
+  {
+    "nama": "Durian",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Siram setiap 7-10 hari pada musim kemarau, buat embung atau bak penampung air di kebun, dan aplikasikan mulsa organik tebal di bawah pohon.",
+    "solusi_hama_cuaca_panas": "Pantau penggerek batang (Xyleutes ceramica) dan ulat pemakan buah; semprot insektisida pada batang dan gunakan perangkap cahaya malam."
+  },
+  {
+    "nama": "Rambutan",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Siram setiap 7 hari secara dalam, buat rorak di bawah kanopi untuk menampung air hujan, dan mulsa tebal di sekitar batang.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu loncat dan lalat buah; semprotkan insektisida sistemik dan gunakan perangkap metil eugenol untuk lalat buah."
+  },
+  {
+    "nama": "Jeruk",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Gunakan irigasi tetes di bawah kanopi, buat rorak melingkar di sekitar pohon, dan aplikasikan mulsa organik tebal untuk menjaga kelembapan akar.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu daun, lalat buah, dan tungau; semprotkan insektisida rotasi dan akarisida, serta lakukan sanitasi kebun secara rutin."
+  },
+  {
+    "nama": "Pepaya",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Siram setiap 5-7 hari, pasang mulsa plastik hitam perak, dan pilih varietas hibrida produktif seperti Calina atau Red Lady yang relatif toleran kering.",
+    "solusi_hama_cuaca_panas": "Pantau tungau merah dan kutu putih; semprot akarisida dan insektisida nabati, serta pastikan drainase baik untuk mencegah busuk akar."
+  },
+  {
+    "nama": "Semangka",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 60,
+    "solusi_kekeringan": "Gunakan irigasi tetes di bawah mulsa plastik hitam perak; fokus penyiraman pada fase pembungaan dan pembesaran buah (setiap 3-4 hari).",
+    "solusi_hama_cuaca_panas": "Waspadai lalat buah, kutu daun, dan tungau; pasang perangkap protein bait dan semprot insektisida nabati serta fungisida untuk mencegah penyakit layu."
+  },
+  {
+    "nama": "Melon",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Terapkan irigasi tetes dengan jadwal ketat (setiap 2-3 hari), pasang mulsa plastik, dan lakukan fertigasi untuk mengoptimalkan nutrisi dan air sekaligus.",
+    "solusi_hama_cuaca_panas": "Pantau thrips, kutu daun, dan lalat buah; gunakan perangkap kuning dan biru serta semprotkan insektisida imidakloprid atau spinosad."
+  },
+  {
+    "nama": "Nanas",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Nanas cukup toleran kering; siram setiap 10-14 hari, gunakan mulsa plastik hitam perak, dan pupuk organik untuk menjaga kesuburan tanah.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu putih (mealybug) dan kutu nanas; semprot insektisida berbahan klorpirifos dan lakukan penyiangan gulma secara rutin."
+  },
+  {
+    "nama": "Nangka",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 10-14 hari pada musim kemarau, buat rorak di sekitar pohon, dan mulsa tebal di bawah kanopi untuk mengurangi penguapan.",
+    "solusi_hama_cuaca_panas": "Pantau lalat buah dan penggerek batang; bungkus buah dengan kantong plastik/kertas dan semprot insektisida pada batang."
+  },
+  {
+    "nama": "Salak",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 120,
+    "solusi_kekeringan": "Siram setiap 5-7 hari, buat parit irigasi di sekitar rumpun, dan aplikasikan mulsa organik tebal untuk menjaga kelembapan dan suhu tanah.",
+    "solusi_hama_cuaca_panas": "Waspadai kumbang salak (Brontispa longissima) dan tungau; semprot insektisida berbahan deltametrin dan lakukan sanitasi pelepah kering."
+  },
+  {
+    "nama": "Manggis",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Siram setiap 7-10 hari dengan air cukup banyak, buat rorak melingkar di bawah kanopi, dan mulsa tebal untuk menjaga kelembapan.",
+    "solusi_hama_cuaca_panas": "Pantau penggerek buah dan kutu putih; semprot insektisida sistemik dan lakukan pembungkusan buah untuk mencegah serangan lalat buah."
+  },
+  {
+    "nama": "Jambu Biji",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Siram setiap 7-10 hari, buat rorak di bawah kanopi, dan gunakan mulsa organik dari kulit kayu atau jerami.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat buah (Bactrocera dorsalis) dan kutu loncat; gunakan perangkap metil eugenol dan semprot insektisida sistemik."
+  },
+  {
+    "nama": "Jambu Air",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 5-7 hari, buat rorak penampung air di sekitar pohon, dan mulsa organik tebal untuk menjaga kelembapan.",
+    "solusi_hama_cuaca_panas": "Pantau lalat buah dan penggerek buah; bungkus buah dengan kantong plastik dan pasang perangkap feromon jantan."
+  },
+  {
+    "nama": "Alpukat",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 7-10 hari pada musim kemarau, buat rorak di bawah kanopi, dan mulsa tebal di sekitar batang untuk mengurangi penguapan.",
+    "solusi_hama_cuaca_panas": "Pantau penggerek batang dan tungau merah; semprot insektisida berbahan klorpirifos pada batang dan akarisida pada daun."
+  },
+  {
+    "nama": "Belimbing",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 5-7 hari, buat parit irigasi melingkar, dan aplikasikan mulsa organik tebal untuk menjaga kelembapan tanah.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat buah dan penggerek buah; bungkus buah dengan kantong dan pasang perangkap protein bait."
+  },
+  {
+    "nama": "Kelengkeng",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 7-10 hari, buat rorak di bawah kanopi, dan mulsa tebal untuk menjaga suhu dan kelembapan akar.",
+    "solusi_hama_cuaca_panas": "Pantau penggerek buah dan kutu loncat; semprot insektisida sistemik dan lakukan sanitasi buah gugur agar tidak menjadi sumber hama."
+  },
+  {
+    "nama": "Sawo",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Sawo relatif toleran kering; siram setiap 10-14 hari, buat rorak, dan mulsa organik tebal di sekitar batang.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat buah dan penggerek batang; bungkus buah dengan kantong dan semprot insektisida pada batang secara berkala."
+  },
+  {
+    "nama": "Stroberi",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 26,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Tanam di dataran tinggi dan gunakan irigasi tetes; siram setiap hari pada pagi hari dan pastikan tanah selalu lembap tapi tidak tergenang.",
+    "solusi_hama_cuaca_panas": "Pantau tungau merah, thrips, dan lalat buah; semprot akarisida berbahan abamektin dan insektisida selektif, serta gunakan mulsa plastik hitam untuk mencegah busuk buah."
+  },
+  {
+    "nama": "Markisa",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 32,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 3-5 hari, pasang trellis untuk merambat, dan gunakan mulsa organik di bawah tanaman.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat buah dan kutu daun; pasang perangkap feromon dan semprot insektisida nabati berbasis neem oil."
+  },
+  {
+    "nama": "Sirsak",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Siram setiap 7-10 hari, buat rorak penampung air, dan mulsa tebal di sekitar batang untuk menjaga kelembapan.",
+    "solusi_hama_cuaca_panas": "Pantau kutu putih dan penggerek buah; bungkus buah muda dengan kantong plastik/kertas dan semprot insektisida sistemik pada kanopi."
+  },
+  {
+    "nama": "Sukun",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 7-10 hari dengan jumlah air besar, buat rorak melingkar di sekitar pohon, dan mulsa organik tebal.",
+    "solusi_hama_cuaca_panas": "Waspadai kutu putih dan penggerek batang; semprot insektisida klorpirifos pada batang dan gunakan sabun insektisida untuk kutu putih."
+  },
+  {
+    "nama": "Cempedak",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 120,
+    "solusi_kekeringan": "Siram setiap 7-14 hari, buat rorak di bawah kanopi, dan mulsa tebal untuk menjaga kelembapan tanah di sekitar akar.",
+    "solusi_hama_cuaca_panas": "Pantau lalat buah dan penggerek batang; bungkus buah dan semprot insektisida sistemik secara berkala."
+  },
+  {
+    "nama": "Kedondong",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Kedondong toleran kering; siram setiap 10-14 hari, buat rorak, dan mulsa organik untuk menjaga kelembapan.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat buah dan kutu daun; pasang perangkap metil eugenol dan semprot insektisida nabati."
+  },
+  {
+    "nama": "Jeruk Nipis",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 80,
+    "solusi_kekeringan": "Siram setiap 7-10 hari dengan air cukup, buat rorak melingkar, dan mulsa organik tebal di sekitar batang.",
+    "solusi_hama_cuaca_panas": "Pantau kutu daun, tungau, dan lalat buah; semprot insektisida dan akarisida rotasi, serta sanitasi buah gugur secara rutin."
+  },
+  {
+    "nama": "Jeruk Pamelo (Jeruk Bali)",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 7-10 hari, buat rorak dan embung di kebun, serta mulsa tebal untuk mengurangi penguapan.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat buah dan penggerek batang; gunakan perangkap protein bait dan semprot insektisida sistemik."
+  },
+  {
+    "nama": "Duku",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Siram setiap 7-10 hari, buat rorak melingkar di bawah kanopi, dan gunakan mulsa organik tebal.",
+    "solusi_hama_cuaca_panas": "Pantau hama kutu loncat duku dan penggerek buah; semprot insektisida sistemik dan lakukan sanitasi buah terserang."
+  },
+  {
+    "nama": "Langsat",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 35,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Siram setiap 7-10 hari pada musim kemarau, buat rorak, dan mulsa tebal untuk menjaga kelembapan tanah di area perakaran.",
+    "solusi_hama_cuaca_panas": "Waspadai penggerek buah dan kutu loncat; semprot insektisida sistemik dan lakukan pemangkasan cabang yang terserang hama."
+  },
+  {
+    "nama": "Lai (Durian Kalimantan)",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Siram setiap 7-10 hari, buat embung penampung air hujan di kebun, dan mulsa tebal di bawah pohon.",
+    "solusi_hama_cuaca_panas": "Pantau penggerek batang dan ulat pemakan buah; semprot insektisida pada batang dan gunakan perangkap cahaya malam."
+  },
+  {
+    "nama": "Buah Naga",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 60,
+    "solusi_kekeringan": "Buah naga toleran kering; siram setiap 7-14 hari, pastikan drainase sangat baik, dan gunakan mulsa untuk menjaga kelembapan.",
+    "solusi_hama_cuaca_panas": "Waspadai tungau merah dan kutu putih; semprot akarisida dan insektisida nabati; jaga agar kebun bersih dari gulma dan sisa tanaman."
+  },
+  {
+    "nama": "Kiwi (dataran tinggi)",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 22,
+    "curah_hujan_minimal": 150,
+    "solusi_kekeringan": "Tanam di dataran tinggi tropis >1500 mdpl; siram setiap 3-5 hari dan gunakan irigasi tetes karena sangat sensitif terhadap kekeringan.",
+    "solusi_hama_cuaca_panas": "Pantau tungau merah dan penggerek batang; semprot akarisida berbahan abamektin dan insektisida selektif pada fase vegetatif."
+  },
+  {
+    "nama": "Srikaya",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 40,
+    "curah_hujan_minimal": 75,
+    "solusi_kekeringan": "Siram setiap 7-10 hari, buat rorak melingkar di sekitar pohon, dan mulsa organik tebal untuk menjaga kelembapan.",
+    "solusi_hama_cuaca_panas": "Pantau kutu putih dan penggerek buah; bungkus buah muda dan semprot insektisida sistemik secara berkala."
+  },
+  {
+    "nama": "Kedung (Gandaria)",
+    "kategori": "Hortikultura - Buah",
+    "suhu_maksimal": 38,
+    "curah_hujan_minimal": 100,
+    "solusi_kekeringan": "Siram setiap 10-14 hari, buat rorak dan mulsa di sekitar batang, serta manfaatkan air sumur untuk irigasi di musim kemarau.",
+    "solusi_hama_cuaca_panas": "Waspadai lalat buah dan kutu daun; pasang perangkap metil eugenol dan semprot insektisida nabati berbasis neem oil."
+  }
+]
