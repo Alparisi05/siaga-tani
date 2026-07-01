@@ -1,5 +1,5 @@
 import React from 'react';
-import { Thermometer, Droplet, RefreshCw, Activity } from 'lucide-react';
+import { Thermometer, Droplet, RefreshCw, Activity, CloudRain, Sun } from 'lucide-react';
 
 export default function WeatherSimulator({
   crop,
@@ -9,7 +9,8 @@ export default function WeatherSimulator({
   onRainChange,
   isManual,
   onResetWeather,
-  hasLocalWeather
+  hasLocalWeather,
+  openMeteoData
 }) {
   const isPeternakan = crop?.kategori === 'Peternakan';
   const isPerikanan = crop?.kategori === 'Perikanan';
@@ -47,9 +48,13 @@ export default function WeatherSimulator({
     labelRight = `Dalam (${sliderMax} cm)`;
   }
 
+  const getDayName = (dateStr) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('id-ID', { weekday: 'short' });
+  };
+
   return (
     <div className="glass-card rounded-2xl p-5 relative overflow-hidden">
-
       <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl pointer-events-none"></div>
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 pb-3 border-b border-slate-100 dark:border-white/5">
@@ -87,7 +92,6 @@ export default function WeatherSimulator({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
         <div className="flex flex-col gap-2 p-3.5 bg-slate-50 dark:bg-slate-900/40 rounded-xl border border-slate-200/50 dark:border-white/5">
           <div className="flex justify-between items-center">
             <span className="text-xs text-slate-600 dark:text-slate-300 font-semibold flex items-center gap-1.5">
@@ -137,6 +141,43 @@ export default function WeatherSimulator({
           </div>
         </div>
       </div>
+
+      {openMeteoData && openMeteoData.daily && (
+        <div className="mt-5 pt-4 border-t border-slate-100 dark:border-white/5">
+          <h3 className="text-xs font-bold text-slate-700 dark:text-slate-350 mb-3 flex items-center gap-1.5">
+            <CloudRain className="w-4 h-4 text-sky-500" /> Prakiraan Hujan Harian & Suhu (7 Hari Ke Depan)
+          </h3>
+          <div className="flex overflow-x-auto gap-2.5 pb-2 no-scrollbar snap-x snap-mandatory lg:grid lg:grid-cols-7 lg:overflow-x-visible lg:pb-0 lg:gap-2">
+            {openMeteoData.daily.time.map((timeStr, idx) => {
+              const rainSum = openMeteoData.daily.rain_sum[idx] || 0;
+              const maxTemp = Math.round(openMeteoData.daily.temperature_2m_max[idx]);
+              const minTemp = Math.round(openMeteoData.daily.temperature_2m_min[idx]);
+              const hasRain = rainSum > 0;
+
+              return (
+                <div key={timeStr} className="flex flex-col items-center p-2 rounded-xl bg-slate-50 dark:bg-slate-900/30 border border-slate-200/40 dark:border-white/5 shadow-sm flex-shrink-0 w-[100px] sm:w-[110px] lg:w-auto snap-align-start">
+                  <span className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase">
+                    {getDayName(timeStr)}
+                  </span>
+                  <div className="my-1 text-sky-500 dark:text-sky-400">
+                    {hasRain ? (
+                      <CloudRain className="w-4 h-4 animate-bounce" style={{ animationDuration: '3s' }} />
+                    ) : (
+                      <Sun className="w-4 h-4 text-amber-500" />
+                    )}
+                  </div>
+                  <span className="text-xs font-black text-slate-800 dark:text-white">
+                    {rainSum.toFixed(1)} <span className="text-[8px] font-bold text-slate-400 dark:text-slate-500">mm</span>
+                  </span>
+                  <span className="text-[9px] text-slate-500 dark:text-slate-400 mt-0.5 leading-none">
+                    {minTemp}° - {maxTemp}°
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

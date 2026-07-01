@@ -24,6 +24,7 @@ export default function App() {
   const [selectedCrop, setSelectedCrop] = useState(cropData && cropData.length > 0 ? cropData[0] : null);
   const [selectedSector, setSelectedSector] = useState('pangan');
   const [isSearchedCity, setIsSearchedCity] = useState(false);
+  const [openMeteoData, setOpenMeteoData] = useState(null);
 
   const getSectorFromCategory = (kategori) => {
     if (!kategori) return 'pangan';
@@ -84,19 +85,26 @@ export default function App() {
     }
   }, [selectedCrop, localWeather.hasFetched]);
 
-  const processWeatherData = (data, overrideCityName = null) => {
+  const processWeatherData = (data, overrideCityName = null, openMeteoDataObj = null) => {
     const wTemp = Math.round(data.main.temp);
     const wType = data.weather[0].main;
     const wDesc = data.weather[0].description;
     const wCity = overrideCityName || data.name;
 
     let wRain = 120;
-    if (['Rain', 'Drizzle', 'Thunderstorm'].includes(wType)) {
-      wRain = 250;
-    } else if (['Clear'].includes(wType)) {
-      wRain = 50;
-    } else if (['Clouds', 'Mist', 'Haze', 'Fog'].includes(wType)) {
-      wRain = 130;
+    if (openMeteoDataObj && openMeteoDataObj.daily && openMeteoDataObj.daily.rain_sum && openMeteoDataObj.daily.rain_sum.length > 0) {
+      const rainSumList = openMeteoDataObj.daily.rain_sum;
+      const total7Days = rainSumList.reduce((sum, currentVal) => sum + (currentVal || 0), 0);
+      const averageDaily = total7Days / rainSumList.length;
+      wRain = Math.round(averageDaily * 30);
+    } else {
+      if (['Rain', 'Drizzle', 'Thunderstorm'].includes(wType)) {
+        wRain = 250;
+      } else if (['Clear'].includes(wType)) {
+        wRain = 50;
+      } else if (['Clouds', 'Mist', 'Haze', 'Fog'].includes(wType)) {
+        wRain = 130;
+      }
     }
 
     setLocalWeather({
@@ -116,17 +124,26 @@ export default function App() {
 
   const fetchWeatherByCoords = async (latitude, longitude, isFallback = false) => {
     try {
-      const [weatherRes, geoRes] = await Promise.all([
+      const [weatherRes, geoRes, openMeteoRes] = await Promise.all([
         fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=id`
         ),
         fetch(
           `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&accept-language=id`
+        ),
+        fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,rain&daily=temperature_2m_max,temperature_2m_min,rain_sum&timezone=auto`
         )
       ]);
 
       if (!weatherRes.ok) throw new Error('API OpenWeather Gagal');
       const weatherData = await weatherRes.ok ? await weatherRes.json() : null;
+
+      let openMeteoDataObj = null;
+      if (openMeteoRes.ok) {
+        openMeteoDataObj = await openMeteoRes.json();
+        setOpenMeteoData(openMeteoDataObj);
+      }
 
       let customCityName = weatherData ? weatherData.name : 'Unknown';
       if (geoRes.ok) {
@@ -146,7 +163,7 @@ export default function App() {
       }
 
       if (weatherData) {
-        processWeatherData(weatherData, customCityName);
+        processWeatherData(weatherData, customCityName, openMeteoDataObj);
       }
 
       if (isFallback) {
@@ -515,6 +532,7 @@ export default function App() {
                       isManual={isManual}
                       onResetWeather={handleResetWeather}
                       hasLocalWeather={localWeather.hasFetched}
+                      openMeteoData={openMeteoData}
                     />
 
                     <AlternativeCrops
