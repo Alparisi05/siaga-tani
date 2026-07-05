@@ -201,10 +201,10 @@ export default function CropsExplorer({ crops }) {
     if (!isActive) {
       return 'border-transparent text-slate-400 dark:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-900/60 hover:text-slate-700 dark:hover:text-slate-200';
     }
-    if (tabId === 'pangan') return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-450 border-emerald-500 dark:border-emerald-500';
-    if (tabId === 'perkebunan') return 'bg-teal-500/10 text-teal-600 dark:text-teal-450 border-teal-500 dark:border-teal-500';
-    if (tabId === 'peternakan') return 'bg-orange-500/10 text-orange-600 dark:text-orange-450 border-orange-500 dark:border-orange-500';
-    if (tabId === 'perikanan') return 'bg-sky-500/10 text-sky-600 dark:text-sky-450 border-sky-500 dark:border-sky-500';
+    if (tabId === 'pangan') return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500 dark:border-emerald-500';
+    if (tabId === 'perkebunan') return 'bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500 dark:border-teal-500';
+    if (tabId === 'peternakan') return 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500 dark:border-orange-500';
+    if (tabId === 'perikanan') return 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500 dark:border-sky-500';
     return 'bg-emerald-500/10 text-emerald-600 border-emerald-500';
   };
 
@@ -277,7 +277,7 @@ export default function CropsExplorer({ crops }) {
                   {getUnicodeEmoji(crop)}
                 </div>
                 <div className="min-w-0">
-                  <span className="text-[9px] text-slate-450 dark:text-slate-500 font-bold uppercase tracking-wider">
+                  <span className="text-[9px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                     {crop.kategori}
                   </span>
                   <h3 className="text-sm font-extrabold text-slate-800 dark:text-white truncate">
@@ -319,14 +319,14 @@ export default function CropsExplorer({ crops }) {
 
               <div className="flex flex-col gap-2.5 pt-3 mt-auto border-t border-slate-100 dark:border-white/5 text-[11px] leading-relaxed">
 
-                <div className="flex items-start gap-2 text-slate-650 dark:text-slate-300 font-medium">
+                <div className="flex items-start gap-2 text-slate-600 dark:text-slate-300 font-medium">
                   <Droplet className="w-3.5 h-3.5 text-sky-500/80 flex-shrink-0 mt-0.5" />
                   <p>
                     <strong className="text-slate-800 dark:text-slate-200">Manajemen Air:</strong> {crop.solusi_kekeringan}
                   </p>
                 </div>
 
-                <div className="flex items-start gap-2 text-slate-650 dark:text-slate-300 font-medium">
+                <div className="flex items-start gap-2 text-slate-600 dark:text-slate-300 font-medium">
                   <Sun className="w-3.5 h-3.5 text-orange-500/80 flex-shrink-0 mt-0.5" />
                   <p>
                     <strong className="text-slate-800 dark:text-slate-200">Proteksi Suhu/Hama:</strong> {crop.solusi_hama_cuaca_panas}
@@ -346,7 +346,7 @@ export default function CropsExplorer({ crops }) {
             >
               <ArrowLeft className="w-3.5 h-3.5" /> Sebelumnya
             </button>
-            <span className="text-xs font-bold text-slate-500 dark:text-slate-450">
+            <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
               Halaman {currentPage} dari {totalPages}
             </span>
             <button

@@ -144,7 +144,7 @@ export default function WeatherSimulator({
 
       {openMeteoData && openMeteoData.daily && (
         <div className="mt-5 pt-4 border-t border-slate-100 dark:border-white/5">
-          <h3 className="text-xs font-bold text-slate-700 dark:text-slate-350 mb-3 flex items-center gap-1.5">
+          <h3 className="text-xs font-bold text-slate-700 dark:text-slate-400 mb-3 flex items-center gap-1.5">
             <CloudRain className="w-4 h-4 text-sky-500" /> Prakiraan Hujan Harian & Suhu (7 Hari Ke Depan)
           </h3>
           <div className="flex overflow-x-auto gap-2.5 pb-2 no-scrollbar snap-x snap-mandatory lg:grid lg:grid-cols-7 lg:overflow-x-visible lg:pb-0 lg:gap-2">

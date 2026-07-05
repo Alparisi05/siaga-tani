@@ -41,13 +41,13 @@ export default function Header({ localWeather, onResetWeather, isManual, activeS
   const getGreeting = (date) => {
     const hour = date.getHours();
     if (hour >= 5 && hour < 11) {
-      return { text: 'Selamat Pagi', icon: <Sun className="w-6 h-6 text-amber-550 dark:text-amber-405 animate-pulse" /> };
+      return { text: 'Selamat Pagi', icon: <Sun className="w-6 h-6 text-amber-500 dark:text-amber-400 animate-pulse" /> };
     } else if (hour >= 11 && hour < 15) {
-      return { text: 'Selamat Siang', icon: <Sun className="w-6 h-6 text-yellow-550 dark:text-yellow-405 animate-spin" style={{ animationDuration: '25s' }} /> };
+      return { text: 'Selamat Siang', icon: <Sun className="w-6 h-6 text-yellow-500 dark:text-yellow-400 animate-spin" style={{ animationDuration: '25s' }} /> };
     } else if (hour >= 15 && hour < 19) {
-      return { text: 'Selamat Sore', icon: <Sunset className="w-6 h-6 text-orange-550 dark:text-orange-405 animate-bounce" /> };
+      return { text: 'Selamat Sore', icon: <Sunset className="w-6 h-6 text-orange-500 dark:text-orange-400 animate-bounce" /> };
     } else {
-      return { text: 'Selamat Malam', icon: <Moon className="w-6 h-6 text-indigo-500 dark:text-indigo-305 animate-pulse" /> };
+      return { text: 'Selamat Malam', icon: <Moon className="w-6 h-6 text-indigo-500 dark:text-indigo-400 animate-pulse" /> };
     }
   };
 
@@ -124,13 +124,13 @@ export default function Header({ localWeather, onResetWeather, isManual, activeS
                 </div>
               ) : localWeather.error ? (
                 <div>
-                  <p className="text-[10px] font-bold text-slate-850 dark:text-slate-200 truncate">Jakarta (Default)</p>
+                  <p className="text-[10px] font-bold text-slate-800 dark:text-slate-200 truncate">Jakarta (Default)</p>
                   <p className="text-[8px] text-rose-500 truncate leading-none">Offline / Ditolak</p>
                 </div>
               ) : (
                 <div>
-                  <p className="text-[10px] font-bold text-slate-850 dark:text-slate-200 truncate leading-snug">{localWeather.city}</p>
-                  <p className="text-[9px] text-emerald-655 dark:text-emerald-400 font-bold capitalize truncate leading-none mt-0.5">
+                  <p className="text-[10px] font-bold text-slate-800 dark:text-slate-200 truncate leading-snug">{localWeather.city}</p>
+                  <p className="text-[9px] text-emerald-600 dark:text-emerald-400 font-bold capitalize truncate leading-none mt-0.5">
                     {localWeather.temp}°C • {localWeather.description}
                   </p>
                 </div>

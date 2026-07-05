@@ -95,7 +95,7 @@ export default function ImpactRecommendations({ crop, health, currentTemp, curre
               </div>
             </div>
 
-            <p className="text-xs text-slate-650 dark:text-slate-300 leading-relaxed font-medium">
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
               {crop.solusi_kekeringan}
             </p>
           </div>
@@ -115,7 +115,7 @@ export default function ImpactRecommendations({ crop, health, currentTemp, curre
               </div>
             </div>
 
-            <p className="text-xs text-slate-650 dark:text-slate-300 leading-relaxed font-medium">
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
               {crop.solusi_hama_cuaca_panas}
             </p>
           </div>

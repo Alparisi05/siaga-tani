@@ -82,7 +82,7 @@ export default function AlternativeCrops({
             className="glass-card rounded-xl p-3.5 border border-emerald-500/25 bg-emerald-500/5 dark:bg-emerald-950/10 hover:bg-emerald-500/10 dark:hover:bg-emerald-950/20 hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all text-left flex flex-col justify-between gap-3 group cursor-pointer shadow-sm"
           >
             <div className="flex flex-col gap-1">
-              <span className="text-[9px] text-slate-450 dark:text-slate-450 font-bold uppercase tracking-wider">
+              <span className="text-[9px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                 {crop.kategori.replace('Hortikultura - ', '')}
               </span>
               <span className="text-sm font-extrabold text-slate-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
@@ -102,7 +102,7 @@ export default function AlternativeCrops({
               </div>
 
               <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-white/5">
-                <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-450 flex items-center gap-1">
+                <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5" /> Kesehatan: {cropHealth}%
                 </span>
                 <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-1 transition-transform" />

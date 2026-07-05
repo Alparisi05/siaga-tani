@@ -101,7 +101,7 @@ export default function AnalisisRisiko({ crops, theme }) {
               <TrendingUp className="w-4 h-4 text-emerald-500" />
               Grafik Batang Rata-rata Batas Suhu Maksimal
             </h3>
-            <p className="text-[11px] text-slate-500 dark:text-slate-455 mt-1 font-medium">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-medium">
               Menunjukkan ambang batas kritis suhu rata-rata sebelum komoditas mengalami cekaman panas (heat stress). Arahkan kursor ke batang untuk detail.
             </p>
           </div>
@@ -218,7 +218,7 @@ export default function AnalisisRisiko({ crops, theme }) {
 
         <div className="flex flex-col gap-5">
           <div className="glass-card rounded-3xl p-5 border border-slate-200/60 dark:border-white/5 flex flex-col gap-3.5">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455 flex items-center gap-1.5">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
               <Info className="w-4 h-4 text-emerald-500" /> Ringkasan Sektor
             </h3>
 
@@ -240,7 +240,7 @@ export default function AnalisisRisiko({ crops, theme }) {
 
           {highestTempCat && lowestTempCat && (
             <div className="glass-card rounded-3xl p-5 border border-slate-200/60 dark:border-white/5 flex flex-col gap-3.5 flex-1 justify-between bg-emerald-500/[0.02] dark:bg-emerald-500/[0.01]">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455 flex items-center gap-1.5">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
                 <AlertTriangle className="w-4 h-4 text-amber-500" /> Analisis Sensitivitas
               </h3>
 

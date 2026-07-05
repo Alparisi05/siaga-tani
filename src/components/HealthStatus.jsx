@@ -105,7 +105,7 @@ export default function HealthStatus({ crop, health, currentTemp, currentRain })
 
           <div className="absolute flex flex-col items-center">
             <span className="text-2xl font-black font-mono text-slate-800 dark:text-white leading-none">{health}%</span>
-            <span className="text-[9px] text-slate-500 dark:text-slate-450 font-bold tracking-wider uppercase mt-1">Kesehatan</span>
+            <span className="text-[9px] text-slate-500 dark:text-slate-400 font-bold tracking-wider uppercase mt-1">Kesehatan</span>
           </div>
         </div>
 
@@ -124,7 +124,7 @@ export default function HealthStatus({ crop, health, currentTemp, currentRain })
           <div className="grid grid-cols-2 gap-3">
 
             <div className="p-2.5 bg-slate-50 dark:bg-slate-900/40 rounded-xl border border-slate-200/50 dark:border-white/5 flex items-center gap-2.5">
-              <Thermometer className={`w-4.5 h-4.5 ${currentTemp > crop.suhu_maksimal ? 'text-rose-500 dark:text-rose-450 animate-pulse' : 'text-slate-400'}`} />
+              <Thermometer className={`w-4.5 h-4.5 ${currentTemp > crop.suhu_maksimal ? 'text-rose-500 dark:text-rose-400 animate-pulse' : 'text-slate-400'}`} />
               <div className="min-w-0">
                 <p className="text-[9px] text-slate-400 dark:text-slate-500 font-bold uppercase leading-none">
                   {isPeternakan ? "Suhu Kandang Maks" : isPerikanan ? "Suhu Air Maks" : "Batas Suhu Maks"}
@@ -139,7 +139,7 @@ export default function HealthStatus({ crop, health, currentTemp, currentRain })
             </div>
 
             <div className="p-2.5 bg-slate-50 dark:bg-slate-900/40 rounded-xl border border-slate-200/50 dark:border-white/5 flex items-center gap-2.5">
-              <Droplet className={`w-4.5 h-4.5 ${currentRain < crop.parameter_air ? 'text-rose-500 dark:text-rose-455 animate-pulse' : 'text-slate-400'}`} />
+              <Droplet className={`w-4.5 h-4.5 ${currentRain < crop.parameter_air ? 'text-rose-500 dark:text-rose-400 animate-pulse' : 'text-slate-400'}`} />
               <div className="min-w-0">
                 <p className="text-[9px] text-slate-400 dark:text-slate-500 font-bold uppercase leading-none">
                   {crop.nama_parameter ? crop.nama_parameter.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ') : 'Curah Hujan Min'}

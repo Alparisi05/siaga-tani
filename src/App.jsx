@@ -428,13 +428,13 @@ export default function App() {
 
               <button
                 onClick={() => handleSectorClick('peternakan')}
-                className="glass-card rounded-2xl p-5 text-left flex flex-col justify-between gap-4 border border-slate-200/60 dark:border-white/5 hover:border-orange-555 dark:hover:border-orange-500/40 hover:bg-orange-500/5 dark:hover:bg-orange-950/10 transition-all group cursor-pointer shadow-sm relative overflow-hidden"
+                className="glass-card rounded-2xl p-5 text-left flex flex-col justify-between gap-4 border border-slate-200/60 dark:border-white/5 hover:border-orange-500 dark:hover:border-orange-500/40 hover:bg-orange-500/5 dark:hover:bg-orange-950/10 transition-all group cursor-pointer shadow-sm relative overflow-hidden"
               >
                 <div className="flex justify-between items-start w-full">
-                  <div className="p-2.5 bg-orange-500/10 rounded-xl text-orange-655 dark:text-orange-400 text-xl font-bold flex items-center justify-center w-11 h-11">
+                  <div className="p-2.5 bg-orange-500/10 rounded-xl text-orange-600 dark:text-orange-400 text-xl font-bold flex items-center justify-center w-11 h-11">
                     {"\u{1F404}"}
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-orange-650 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-orange-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
                 <div>
                   <span className="text-xl font-black font-mono text-slate-800 dark:text-white block leading-none">
@@ -449,13 +449,13 @@ export default function App() {
 
               <button
                 onClick={() => handleSectorClick('perikanan')}
-                className="glass-card rounded-2xl p-5 text-left flex flex-col justify-between gap-4 border border-slate-200/60 dark:border-white/5 hover:border-sky-500 dark:hover:border-sky-500/40 hover:bg-sky-500/5 dark:hover:bg-sky-955/10 transition-all group cursor-pointer shadow-sm relative overflow-hidden"
+                className="glass-card rounded-2xl p-5 text-left flex flex-col justify-between gap-4 border border-slate-200/60 dark:border-white/5 hover:border-sky-500 dark:hover:border-sky-500/40 hover:bg-sky-50/5 dark:hover:bg-sky-950/10 transition-all group cursor-pointer shadow-sm relative overflow-hidden"
               >
                 <div className="flex justify-between items-start w-full">
-                  <div className="p-2.5 bg-sky-500/10 rounded-xl text-sky-650 dark:text-sky-400 text-xl font-bold flex items-center justify-center w-11 h-11">
+                  <div className="p-2.5 bg-sky-500/10 rounded-xl text-sky-600 dark:text-sky-400 text-xl font-bold flex items-center justify-center w-11 h-11">
                     {"\u{1F41F}"}
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-sky-605 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-sky-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
                 <div>
                   <span className="text-xl font-black font-mono text-slate-800 dark:text-white block leading-none">
@@ -480,9 +480,9 @@ export default function App() {
                   <li><strong className="text-slate-800 dark:text-slate-100">Simulasi Cuaca Interaktif</strong>: Menguji ketahanan komoditas dengan menggeser simulator suhu udara atau tingkat ketersediaan air.</li>
                 </ul>
                 <ul className="list-disc list-inside flex flex-col gap-2">
-                  <li><strong className="text-slate-850 dark:text-slate-100">Analisis Dampak Otomatis</strong>: Memberikan penjelasan langsung mengenai dampak buruk perubahan cuaca ekstrem pada kelangsungan komoditas.</li>
-                  <li><strong className="text-slate-855 dark:text-slate-100">Panduan & Solusi Praktis</strong>: Menyediakan tips mitigasi taktis untuk mencegah risiko gagal panen atau kematian hewan ternak/biota air.</li>
-                  <li><strong className="text-slate-855 dark:text-slate-100">Saran Komoditas Alternatif</strong>: Merekomendasikan jenis komoditas lain yang lebih tangguh ketika kondisi cuaca tidak lagi bersahabat.</li>
+                  <li><strong className="text-slate-800 dark:text-slate-100">Analisis Dampak Otomatis</strong>: Memberikan penjelasan langsung mengenai dampak buruk perubahan cuaca ekstrem pada kelangsungan komoditas.</li>
+                  <li><strong className="text-slate-800 dark:text-slate-100">Panduan & Solusi Praktis</strong>: Menyediakan tips mitigasi taktis untuk mencegah risiko gagal panen atau kematian hewan ternak/biota air.</li>
+                  <li><strong className="text-slate-800 dark:text-slate-100">Saran Komoditas Alternatif</strong>: Merekomendasikan jenis komoditas lain yang lebih tangguh ketika kondisi cuaca tidak lagi bersahabat.</li>
                 </ul>
               </div>
             </div>
