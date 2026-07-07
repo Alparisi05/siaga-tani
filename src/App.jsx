@@ -44,7 +44,8 @@ export default function App() {
     description: 'berawan',
     loading: true,
     error: null,
-    hasFetched: false
+    hasFetched: false,
+    rain: 120
   });
 
   const [isManual, setIsManual] = useState(false);
@@ -69,21 +70,13 @@ export default function App() {
         setRain(selectedCrop.parameter_air);
       } else {
         if (localWeather.hasFetched) {
-          let localRainEstimate = 120;
-          if (['Rain', 'Drizzle', 'Thunderstorm'].includes(localWeather.weatherType)) {
-            localRainEstimate = 250;
-          } else if (['Clear'].includes(localWeather.weatherType)) {
-            localRainEstimate = 50;
-          } else if (['Clouds', 'Mist', 'Haze', 'Fog'].includes(localWeather.weatherType)) {
-            localRainEstimate = 130;
-          }
-          setRain(localRainEstimate);
+          setRain(localWeather.rain);
         } else {
           setRain(120);
         }
       }
     }
-  }, [selectedCrop, localWeather.hasFetched]);
+  }, [selectedCrop, localWeather.hasFetched, localWeather.rain]);
 
   const processWeatherData = (data, overrideCityName = null, openMeteoDataObj = null) => {
     const wTemp = Math.round(data.main.temp);
@@ -114,7 +107,8 @@ export default function App() {
       description: wDesc,
       loading: false,
       error: null,
-      hasFetched: true
+      hasFetched: true,
+      rain: wRain
     });
 
     setTemp(wTemp);
@@ -181,7 +175,8 @@ export default function App() {
         description: 'berawan tebal',
         loading: false,
         error: err.message,
-        hasFetched: true
+        hasFetched: true,
+        rain: 120
       });
       setTemp(28);
       setRain(120);
@@ -240,16 +235,7 @@ export default function App() {
 
   useEffect(() => {
     if (localWeather.hasFetched) {
-      let localRainEstimate = 120;
-      if (['Rain', 'Drizzle', 'Thunderstorm'].includes(localWeather.weatherType)) {
-        localRainEstimate = 250;
-      } else if (['Clear'].includes(localWeather.weatherType)) {
-        localRainEstimate = 50;
-      } else if (['Clouds', 'Mist', 'Haze', 'Fog'].includes(localWeather.weatherType)) {
-        localRainEstimate = 130;
-      }
-
-      if (temp !== localWeather.temp || rain !== localRainEstimate) {
+      if (temp !== localWeather.temp || rain !== localWeather.rain) {
         setIsManual(true);
       } else {
         setIsManual(false);
@@ -270,16 +256,8 @@ export default function App() {
       return;
     }
     if (localWeather.hasFetched) {
-      let localRainEstimate = 120;
-      if (['Rain', 'Drizzle', 'Thunderstorm'].includes(localWeather.weatherType)) {
-        localRainEstimate = 250;
-      } else if (['Clear'].includes(localWeather.weatherType)) {
-        localRainEstimate = 50;
-      } else if (['Clouds', 'Mist', 'Haze', 'Fog'].includes(localWeather.weatherType)) {
-        localRainEstimate = 130;
-      }
       setTemp(localWeather.temp);
-      setRain(localRainEstimate);
+      setRain(localWeather.rain);
       setIsManual(false);
     }
   };

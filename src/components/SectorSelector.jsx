@@ -136,7 +136,7 @@ export default function SectorSelector({
               </button>
 
               {isOpen && (
-                <div className="absolute right-0 md:left-0 top-full mt-2 w-64 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col">
+                <div className={`absolute ${sector.id === 'pangan' || sector.id === 'peternakan' ? 'left-0' : 'right-0 md:left-0'} top-full mt-2 w-64 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800/80 rounded-2xl shadow-2xl z-50 overflow-hidden flex flex-col`}>
 
                   <div className="p-2 border-b border-slate-100 dark:border-slate-800/50 bg-slate-50/50 dark:bg-slate-900/50 flex items-center gap-2">
                     <Search className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 flex-shrink-0" />
